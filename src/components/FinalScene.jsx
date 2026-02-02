@@ -38,11 +38,11 @@ const FinalScene = () => {
       <section className="w-full max-w-full overflow-hidden">
         <h2 className="text-center font-serif text-2xl text-rizu-gold/70 mb-8 italic">Moments in time</h2>
         <div className="flex space-x-8 px-8 overflow-x-auto pb-8 snap-x scrollbar-gold touch-pan-x">
-          {[1, 2, 3].map((i) => (
+          {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="snap-center shrink-0 w-[300px] aspect-[3/4] bg-rizu-black border border-rizu-gold/20 rounded-lg overflow-hidden relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10" />
               <img
-                src={`/gallery/memory${i}.jpg`}
+                src={`gallery/rizu${i}.jpg`}
                 alt={`Memory ${i}`}
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                 onError={(e) => {

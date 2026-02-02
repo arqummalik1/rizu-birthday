@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const memories = [
-  { id: 1, caption: "The way you laugh", color: "from-purple-900 to-indigo-900", src: "/gallery/rizu1.jpg" },
-  { id: 2, caption: "Quiet moments", color: "from-pink-900 to-rose-900", src: "/gallery/rizu2.jpg" },
-  { id: 3, caption: "Just us", color: "from-blue-900 to-cyan-900", src: "/gallery/rizu3.jpg" },
+  { id: 1, caption: "The way you laugh", color: "from-purple-900 to-indigo-900", src: "gallery/memory1.jpg" },
+  { id: 2, caption: "Quiet moments", color: "from-pink-900 to-rose-900", src: "gallery/memory2.jpg" },
+  { id: 3, caption: "Just us", color: "from-blue-900 to-cyan-900", src: "gallery/memory3.jpg" },
 ];
 
 const MemoryGallery = ({ onComplete }) => {
@@ -24,10 +24,10 @@ const MemoryGallery = ({ onComplete }) => {
   return (
     <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-3 sm:p-4">
       {memories.map((mem) => (
-        <MemoryCard 
-          key={mem.id} 
-          memory={mem} 
-          onReveal={() => handleReveal(mem.id)} 
+        <MemoryCard
+          key={mem.id}
+          memory={mem}
+          onReveal={() => handleReveal(mem.id)}
         />
       ))}
     </div>
@@ -41,33 +41,27 @@ const MemoryCard = ({ memory, onReveal }) => {
   return (
     <motion.div
       className="relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group"
-      onHoverStart={() => {
-        setIsHovered(true);
+      onClick={() => {
+        setIsHovered(!isHovered);
         onReveal();
       }}
-      onHoverEnd={() => setIsHovered(false)}
-      onTouchStart={() => {
-        setIsHovered(true);
-        onReveal();
-      }}
-      onTouchEnd={() => setIsHovered(false)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
     >
       {/* Blurred Cover / Image */}
       {memory.src && !imgError ? (
-        <img 
-          src={memory.src} 
+        <img
+          src={memory.src}
           alt={memory.caption}
           className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${isHovered ? 'blur-none scale-105' : 'blur-xl scale-110'}`}
           onError={() => setImgError(true)}
         />
       ) : (
-        <div 
+        <div
           className={`absolute inset-0 bg-gradient-to-br ${memory.color} transition-all duration-700 ${isHovered ? 'blur-none scale-105' : 'blur-xl scale-110'}`}
         />
       )}
-      
+
       {/* Overlay for blur effect */}
       <div className={`absolute inset-0 bg-black/50 transition-opacity duration-700 ${isHovered ? 'opacity-0' : 'opacity-100'}`} />
 
