@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const memories = [
-  { id: 1, caption: "The way you laugh", color: "from-purple-900 to-indigo-900", src: "gallery/memory1.jpg" },
-  { id: 2, caption: "Quiet moments", color: "from-pink-900 to-rose-900", src: "gallery/memory2.jpg" },
-  { id: 3, caption: "Just us", color: "from-blue-900 to-cyan-900", src: "gallery/memory3.jpg" },
+  { id: 1, caption: "The way you laugh", color: "from-purple-900 to-indigo-900", src: "./gallery/memory1.jpg" },
+  { id: 2, caption: "Quiet moments", color: "from-pink-900 to-rose-900", src: "./gallery/memory2.jpg" },
+  { id: 3, caption: "Just us", color: "from-blue-900 to-cyan-900", src: "./gallery/memory3.jpg" },
 ];
 
 const MemoryGallery = ({ onComplete }) => {

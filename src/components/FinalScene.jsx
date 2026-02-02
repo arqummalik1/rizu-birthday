@@ -42,7 +42,7 @@ const FinalScene = () => {
             <div key={i} className="snap-center shrink-0 w-[300px] aspect-[3/4] bg-rizu-black border border-rizu-gold/20 rounded-lg overflow-hidden relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10" />
               <img
-                src={`gallery/rizu${i}.jpg`}
+                src={`./gallery/rizu${i}.jpg`}
                 alt={`Memory ${i}`}
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                 onError={(e) => {
