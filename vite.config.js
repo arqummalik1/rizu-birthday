@@ -9,5 +9,5 @@ export default defineConfig({
     tailwindcss(),
     
   ],
-  base: '/rizu-birthday/',
+  base: '/',
 })
